@@ -1,9 +1,9 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>FB layout(Inicia sesion o registrate)</title>
-        <metadata charset=UTF-8">
-       <style>
+    <title>FB layout(Inicia sesion o registrate)</title>
+    <metadata charset="UTF-8"/>
+    <style>
         body{background-color:#efefef;font-family: Arial, Helvetica, sans-serif;}
         article{width:100%;}
         section{display:inline-block;}
@@ -11,12 +11,23 @@
         div{
            box-shadow:2px 2px 4px grey;border-radius:20px;padding:0;margin:16px;
         width:160px;height:200px;background-color:#ffffff;}
-        a.hover {
-            border-radius:100%;background-color:white;color:black;
-            padding:5px;text-decoration:none;position:absolute;z-index:1;}
-        a.hover:hover{background-color:gray;color:white;text-decoration:none;}
+        /*search how to make this shorter:*/
+        .hover{border-radius:100px;background-color:white;color:black;
+            padding:5px;position:absolute;top:200;z-index:1;cursor:pointer;}
+        .hover:hover{background-color:gray;color:white;}
+        .hover1{border-radius:100px;background-color:white;color:black;
+            padding:5px;position:absolute;top:200;z-index:1;cursor:pointer;}
+        .hover1:hover{background-color:gray;color:white;}
+        .hover2{border-radius:100px;background-color:white;color:black;
+            padding:5px;position:absolute;top:200;z-index:1;cursor:pointer;}
+        .hover2:hover{background-color:gray;color:white;}
+        .hover3{border-radius:100px;background-color:white;color:black;
+            padding:5px;position:absolute;top:200;z-index:1;cursor:pointer;}
+        .hover3:hover{background-color:gray;color:white;}
+         /*user*/
         .user{vertical-align:center;padding:5px;text-align:center;}
-        img{border-radius:20px 20px 0 0 ;margin:0;}
+        img{border-radius:20px 20px 0 0 ;margin:0;position:static;top:0;
+        }
         .float{display:inline-block;}
         .logIn{width:400px;height:auto;background-color:#ffffff;margin:auto;
         padding:20px;text-align:center;}
@@ -24,7 +35,8 @@
             margin:5px;border-radius:5px;padding:5px;width:100%;
             display:block;margin-left:auto;margin-right:auto;
         }
-        botton{border-radius:5px;padding:5px;color:#fff;margin:20px;display:block;
+        button.blue, .green{border:0;border-radius:5px;padding:8px;color:#fff;
+            margin:20px;display:block;margin-left:auto;margin-right:auto;
         text-align:center;font-weight:900;}
         .blue{background-color:blue;}
         .green{background-color:green;}
@@ -33,7 +45,7 @@
         .a-blk{text-decoration:none;font-weight:900;color:#000;}
         footer{width:100%;height:50px;background-color:#fff;
         }
-    </style>
+        </style>
     </head>
     <body>
     <article>
@@ -42,26 +54,26 @@
         <p class="bold">Inicios de sesión recientes</p>
         <p>Haz clic en tu foto o agrega una cuenta</p>
         <section class="float">
-        <div>
-            <a class="hover">×</a>
+        <div id="demo">
+            <button class="hover" type="button" onclick="document.getElementById('demo').style.display='none'">x</button>
            <img src="https://i.pinimg.com/564x/11/7f/15/117f15b868294ed813c160ea8fc0e302.jpg" height="150px" width="160px"> 
          <p class="user">Logan</p>
         </div>
-        <div>
-            <a class="hover">×</a>
-            <img src="https://i.pinimg.com/474x/4e/8e/0b/4e8e0b8460a9c1a154bc9283dc91b3fd.jpg" height="150px" width="160px">
+        <div id="demo1">
+            <button class="hover1" type="button" onclick="document.getElementById('demo1').style.display='none'">x</button>
+           <img src="https://i.pinimg.com/474x/4e/8e/0b/4e8e0b8460a9c1a154bc9283dc91b3fd.jpg" height="150px" width="160px">
            <p class="user">Kendall</p>
         </div>
         </section>
         <section class="float">
-          <div>
-              <a class="hover">×</a>
-            <img src="https://pbs.twimg.com/profile_images/959496890189426690/ob4JO9Bx_400x400.jpg" height="150px" width="160px">
+          <div id="demo2">
+              <button class="hover2" type="button" onclick="document.getElementById('demo2').style.display='none'">x</button>
+           <img src="https://pbs.twimg.com/profile_images/959496890189426690/ob4JO9Bx_400x400.jpg" height="150px" width="160px">
            <p class="user">James</p>
         </div>  
-        <div>
-            <a class="hover">×</a>
-            <img src="https://i.pinimg.com/originals/46/4b/72/464b72ee33b445c2227ac113f1231898.jpg" height="150px" width="160px">
+        <div id="demo3">
+            <button class="hover3" type="button" onclick="document.getElementById('demo3').style.display='none'">x</button>
+           <img src="https://i.pinimg.com/originals/46/4b/72/464b72ee33b445c2227ac113f1231898.jpg" height="150px" width="160px">
           <p class="user">Carlos</p>
         </div>  
         </section>
@@ -69,16 +81,16 @@
             <img src="https://www.netclipart.com/pp/m/103-1035071_plus-sign-icon-png-cross.png" height="150px" width="160px">
             <p class="user">Crear cuenta nueva</p>
         </div>
-        </section>
+        </section> 
     <section>
         <div class="logIn">
           <form>
               <input type="text" placeholder="Correo electronico"><br>
               <input type="password" placeholder="Contraseña">
             </form>
-            <botton class="blue">Iniciar sesion</botton>
+            <button class="blue">Iniciar sesion</button>
             <a href="">¿Olvidaste tu contraseña?</a>
-            <botton class="green">Crear una cuenta nueva</botton>
+            <button class="green">Crear una cuenta nueva</button>
             <hr width="260px">
         </div>
         <p><a href="" class="a-blk">Crea una página</a> para un personaje público, un grupo de música o un negocio.</p>
